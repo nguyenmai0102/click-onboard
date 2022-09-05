@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bat ban phim</title>
+</head>
+<body onload="doReady()"></body>
+
+<img id="Long" src="img/Long.png" alt="anhDangTai" style=" position: absolute; top: 0; left: 0;" height="200" width = "170">
+
+<script>
+    function upArrowPressed(){
+    let element = document.getElementById("Long");
+    element.style.top=parseInt(element.style.top) -5 +'px';
+    }
+    function dowArrowPressed(){
+        let element = document.getElementById("Long");
+        element.style.top=parseInt(element.style.top) + 5 +'px';
+    }
+    function leftArrowPressed(){
+        let element = document.getElementById("Long");
+        element.style.left=parseInt(element.style.left)-5+'px';
+    }
+    function rightArrowPressed(){
+       let element = document.getElementById("Long");
+        element.style.left=parseInt(element.style.left) +5 +'px';
+    }
+    function moveSelection(evt){
+        switch (evt.keyCode){
+            case 37:
+                leftArrowPressed();
+                break;
+            case  39:
+            rightArrowPressed();
+            break;
+            case  38:
+                upArrowPressed();
+                break;
+            case 40:
+                dowArrowPressed();
+                break;
+        }
+    }
+    function doReady(){
+        window.addEventListener('keydown', moveSelection);
+    }
+</script>
+
+
+
+</body>
+</html>
